@@ -8,6 +8,15 @@ build a beta Rust, then (if you want a nightly) it uses this beta Rust to build
 a nightly Rust. It also deals with ensuring the right cargo version is used at
 each stage.
 
+Note that the Rust toolchain is _self-hosting_.
+As such, the previous version of Rust is used to build the next version.
+
+__stable__->__beta__->__nightly__
+
+That means it is easiest to use this script from _OpenBSD-current_.
+On _OpenBSD-stable_ you could try to checkout the port `lang/rust` from _OpenBSD-current_, and try to build it first.
+But it is an unsupported configuration.
+
 ## Quick Start
 
 First, choose a program to allow build-rust to be root. You usually want either
